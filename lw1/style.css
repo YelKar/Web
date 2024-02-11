@@ -1,0 +1,176 @@
+:root {
+    /* page */
+    --bgc: white;
+    --text-color: #101315;
+    --page-width: 960px;
+
+    /* navigation panels */
+    --top-panel-height: 74px;
+    --top-panel-text-color: #2E2E2E;
+    --top-navbar-button-padding: 20px;
+
+    --bottom-panel-text-color: #FFFFFF;
+    --bottom-panel-height: 89px;
+    --bottom-navbar-button-padding: 10px;
+
+    --navbar-width: var(--page-width);
+
+    /* title */
+    --title-text-color: #2E2E2E;
+
+    /* content */
+    --content-width: var(--page-width);
+}
+
+body {
+    background-color: var(--bgc);
+    color: var(--text-color);
+    margin: 0;
+
+    font-family: Oxygen, sans-serif;
+    font-weight: 400;
+}
+
+/* Title */
+.page-head {
+    width: var(--page-width);
+    margin: 82px auto 113px;
+
+    text-align: center;
+}
+
+.page-head * {
+    font-weight: 400;
+    color: var(--title-text-color);
+}
+
+.page-title {
+    font-family: Lora, serif;
+    font-size: 50px;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+.page-subtitle {
+    font-family: Oxygen, sans-serif;
+    font-size: 17px;
+    line-height: 20px;
+    margin: 20px;
+    opacity: 0.63;
+}
+
+.page-image {
+    width: 100%;
+    height: 534px;
+
+    background-image: url("./src/img/polarlights.jpeg");
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* article text */
+.page-content {
+    margin: 140px auto 130px auto;
+    width: var(--content-width);
+
+    font-family: Oxygen, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 35px;
+    color: var(--text-color);
+
+    white-space: pre-line;
+}
+
+/* Top and bottom panel */
+
+#logo, a:has(#logo) {
+    width: 92px;
+    height: 26px;
+}
+
+.top-panel #logo path {
+    fill: var(--top-panel-text-color);
+}
+
+.bottom-panel #logo path {
+    fill: var(--bottom-panel-text-color);
+}
+
+.navigation-panel {
+    width: 100%;
+}
+
+.top-panel {
+    height: var(--top-panel-height);
+}
+
+.bottom-panel {
+    height: var(--bottom-panel-height);
+
+    background: linear-gradient(#232F389a, #232F389a), url("./src/img/footer-image.jpeg") no-repeat;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: var(--navbar-width);
+    height: 100%;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-buttons {
+    display: flex;
+
+    height: 100%;
+}
+
+.navbar-button {
+    height: 100%;
+
+    list-style-type: none;
+
+    cursor: pointer;
+}
+
+.top-panel .navbar-button {
+    padding-left: var(--top-navbar-button-padding);
+    padding-right: var(--top-navbar-button-padding);
+}
+
+.bottom-panel .navbar-button {
+    padding-left: var(--bottom-navbar-button-padding);
+    padding-right: var(--bottom-navbar-button-padding);
+}
+
+.navbar-button > a {
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.top-panel .navbar-button > a {
+    color: var(--top-panel-text-color);
+    font-size: 12px;
+    letter-spacing: .6px;
+    line-height: var(--top-panel-height);
+}
+
+.bottom-panel .navbar-button > a {
+    color: var(--bottom-panel-text-color);
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: var(--bottom-panel-height);
+    opacity: 60%;
+}
+
+.navbar-button:hover > a {
+    text-decoration: underline;
+}
