@@ -2,7 +2,8 @@
     /* page */
     --bgc: white;
     --text-color: #101315;
-    --page-width: 960px;
+    --page-width: 85vw;
+    --page-max-width: 960px;
 
     /* navigation panels */
     --top-panel-height: 74px;
@@ -14,12 +15,14 @@
     --bottom-navbar-button-padding: 10px;
 
     --navbar-width: var(--page-width);
+    --navbar-max-width: var(--page-max-width) !important;
 
     /* title */
     --title-text-color: #2E2E2E;
 
     /* content */
     --content-width: var(--page-width);
+    --content-max-width: var(--page-max-width);
 }
 
 body {
@@ -34,6 +37,7 @@ body {
 /* Title */
 .page-head {
     width: var(--page-width);
+    max-width: var(--page-max-width);
     margin: 82px auto 113px;
 
     text-align: center;
@@ -73,6 +77,7 @@ body {
 .page-content {
     margin: 140px auto 130px auto;
     width: var(--content-width);
+    max-width: var(--content-max-width);
 
     font-family: Oxygen, sans-serif;
     font-size: 24px;
@@ -121,6 +126,7 @@ body {
     align-items: center;
 
     width: var(--navbar-width);
+    max-width: var(--navbar-max-width);
     height: 100%;
 
     margin-right: auto;
