@@ -90,16 +90,16 @@ body {
 
 /* Top and bottom panel */
 
-#logo, a:has(#logo) {
+.logo, a:has(.logo) {
     width: 92px;
     height: 26px;
 }
 
-.top-panel #logo path {
+.top-panel .logo path {
     fill: var(--top-panel-text-color);
 }
 
-.bottom-panel #logo path {
+.bottom-panel .logo path {
     fill: var(--bottom-panel-text-color);
 }
 
