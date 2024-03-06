@@ -1,0 +1,197 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(./src/Montserrat.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-block {
+    padding: 234px 0 248px;
+    text-align: center;
+    background-image: url(./src/header-arrow.svg);
+    background-size: 558px 478px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.main-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 83px;
+    font-weight: 700;
+    line-height: 101px;
+    color: #ff603d;
+    text-align: center;
+    margin: 0 0 11px 0;
+}
+
+.main-subtitle {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 33px;
+    color: #2f3337;
+    margin: 0 0 28px 0;
+}
+
+.main-button {
+    display: inline-block;
+    text-align: center;
+    padding: 25px 13px;
+    border-radius: 20px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1e2e3d;
+    border: 3px solid #ff603d;
+
+    text-decoration: none;
+}
+
+.about-me-block {
+    padding: 72px 0 176px 0;
+    background-color: #ff603d;
+}
+
+.about-me-title {
+    margin: 0 0 47px 0;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 49px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.person-info-block {
+    display: flex;
+    gap: 89px;
+    align-items: center;
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+.person-info-block > img {
+    height: 100%;
+}
+
+.person-info-area {
+    display: inline-block;
+    margin: 42px 0 60px 0;
+    width: 753px;
+}
+
+.person-info-text {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #ffffff;
+}
+
+.profession-block {
+    padding: 114px 393px 211px 0;
+
+    background-image: url(./src/footer-arrow.svg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+.profession-info-block {
+    margin: 0 auto;
+    width: 760px;
+}
+
+.profession-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 64px;
+
+    margin-bottom: 120px;
+    color: #000000;
+}
+
+.profession-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+
+    color: #2f3337;
+}
+
+.footer-block {
+    padding: 178px 0 101px;
+    text-align: center;
+}
+
+.contacts-block {
+    margin-top: 38px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.contacts-block img {
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (max-width: 1640px) {
+    .main-block, .profession-block {
+        background: none;
+    }
+
+    .main-button {
+        font-size: 30px;
+        padding: 30px 40px;
+    }
+
+    .person-info-block {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-block,
+    .person-info-block,
+    .profession-block {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .profession-block, .about-me-block {
+        padding-bottom: 100px;
+    }
+
+    .profession-info-block, .person-info-area {
+        width: auto;
+    }
+
+    .contacts-block img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .main-block,
+    .person-info-block,
+    .profession-block {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    .profession-block, .about-me-block {
+        padding-bottom: 80px;
+    }
+}

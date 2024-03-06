@@ -1,33 +1,35 @@
 :root {
     /* page */
-    --bgc: white;
-    --text-color: #101315;
     --page-width: 85vw;
     --page-max-width: 960px;
 
     /* navigation panels */
     --top-panel-height: 74px;
-    --top-panel-text-color: #2E2E2E;
     --top-panel-button-padding: 20px;
 
-    --bottom-panel-text-color: #FFFFFF;
+    --bottom-panel-text-color: #ffffff;
     --bottom-panel-height: 89px;
     --bottom-panel-button-padding: 10px;
 
     --navbar-width: var(--page-width);
     --navbar-max-width: var(--page-max-width) !important;
 
-    /* title */
-    --title-text-color: #2E2E2E;
 
     /* content */
     --content-width: var(--page-width);
     --content-max-width: var(--page-max-width);
+
+    --scroll-thumb-color: #cccccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--bgc);
-    color: var(--text-color);
     margin: 0;
 
     font-family: Oxygen, sans-serif;
@@ -38,7 +40,8 @@ body {
 .page-header {
     width: var(--page-width);
     max-width: var(--page-max-width);
-    margin: 82px auto 113px;
+    margin-left: auto;
+    margin-right: auto;
 
     text-align: center;
 }
@@ -46,6 +49,7 @@ body {
 .page-header__title {
     font-family: Lora, serif;
     font-size: 50px;
+    line-height: 51px;
     font-weight: 400;
     margin: 0 0 20px 0;
     letter-spacing: 2px;
@@ -63,29 +67,11 @@ body {
     opacity: 0.63;
 }
 
-.page-image {
-    width: 100%;
-    height: 534px;
-
-    background-image: url("./src/img/polarlights.jpeg");
-    background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-/* article text */
 .page-content {
-    margin: 140px auto 130px auto;
+    margin-left: auto;
+    margin-right: auto;
     width: var(--content-width);
     max-width: var(--content-max-width);
-
-    font-family: Oxygen, sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 35px;
-    color: var(--text-color);
-
-    white-space: pre-line;
 }
 
 /* Top and bottom panel */
@@ -99,25 +85,18 @@ body {
     padding: 0;
 }
 
-.top-panel .navbar__logo path {
-    fill: var(--top-panel-text-color);
-}
-
-.bottom-panel .navbar__logo path {
-    fill: var(--bottom-panel-text-color);
-}
-
 .navbar {
     width: 100%;
 }
 
 .top-panel {
+    width: 100%;
     height: var(--top-panel-height);
 }
 
 .bottom-panel {
     height: var(--bottom-panel-height);
-    background: linear-gradient(#232F389A, #232F389A), url("./src/img/footer-image.jpeg") no-repeat;
+    background: linear-gradient(#232f389a, #232f389a), url("./src/img/footer-image.jpeg") no-repeat;
     background-position-y: center;
     background-size: 100%;
 }
@@ -182,4 +161,31 @@ body {
 
 .navbar__button:hover > a {
     text-decoration: underline;
+}
+
+
+/* scrollbar */
+
+html {
+    scrollbar-gutter: both-edges;
+}
+
+::-webkit-scrollbar {
+    background-color: #0000;
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: 10px;
+    border: 3.5px solid var(--bgc);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in srgb, var(--blog-pages-title-underline-color), #000 5%);
+    border-width: 2px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
 }

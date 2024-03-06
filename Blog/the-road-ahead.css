@@ -1,0 +1,35 @@
+:root {
+    --bgc: white;
+    --text-color: #101315;
+    --top-panel-text-color: #2e2e2e;
+    --title-text-color: #2e2e2e;
+}
+
+.page-header {
+    box-sizing: border-box;
+    padding-top: 82px;
+    padding-bottom: 113px;
+}
+
+.page-image {
+    width: 100%;
+    height: 534px;
+
+    background-image: url("src/img/page-images/the-road-ahead.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-content {
+    margin-top: 140px;
+    margin-bottom: 135px;
+
+    font-family: Oxygen, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 35px;
+    color: var(--text-color);
+
+    white-space: pre-line;
+}
