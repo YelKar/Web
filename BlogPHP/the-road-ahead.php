@@ -1,3 +1,9 @@
+<?php
+
+include "globals.php";
+global $navbar_buttons;
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,10 +20,9 @@
       <img class="navbar__logo" src="static/images/dark-logo.svg" alt="Logo">
     </a>
     <ul class="navbar__button-container">
-      <li class="navbar__button"><a href="#" class="navbar__link">HOME</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CATEGORIES</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">ABOUT</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CONTACT</a></li>
+      <?php foreach ($navbar_buttons as $navbar_button): ?>
+      <li class="navbar__button"><a href="<?= $navbar_button['link'] ?>" class="navbar__link"><?= $navbar_button['text'] ?></a></li>
+      <?php endforeach; ?>
     </ul>
   </nav>
 </header>
@@ -44,10 +49,9 @@
       <img class="navbar__logo" src="static/images/light-logo.svg" alt="Logo">
     </a>
     <ul class="navbar__button-container">
-      <li class="navbar__button"><a href="#" class="navbar__link">HOME</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CATEGORIES</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">ABOUT</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CONTACT</a></li>
+      <?php foreach ($navbar_buttons as $navbar_button): ?>
+      <li class="navbar__button"><a href="<?= $navbar_button['link'] ?>" class="navbar__link"><?= $navbar_button['text'] ?></a></li>
+      <?php endforeach; ?>
     </ul>
   </nav>
 </footer>

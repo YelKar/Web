@@ -1,3 +1,7 @@
+<?php
+global $post
+?>
+
 <a
     class="featured-post"
     style="background-image: url('static/images/page-images/<?= $post["image"] ?>');"

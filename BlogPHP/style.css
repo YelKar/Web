@@ -142,6 +142,9 @@ body {
 .navbar__link {
     font-weight: 400;
     text-decoration: none;
+    display: block;
+    height: 100%;
+    text-transform: uppercase;
 }
 
 .top-panel .navbar__link {

@@ -1,4 +1,9 @@
 <?php
+
+include "globals.php";
+global $navbar_buttons;
+
+
 $theme_buttons = [
   ["text" => "Nature", "link" => "#"],
   ["text" => "Photography", "link" => "#"],
@@ -94,7 +99,9 @@ $most_recent_posts = [
     "date" => "9/25/2015",
     "link" => "#",
   ],
-]
+];
+
+
 
 ?>
 
@@ -115,10 +122,9 @@ $most_recent_posts = [
       <img class="navbar__logo" src="static/images/light-logo.svg" alt="Logo">
     </a>
     <ul class="navbar__button-container">
-      <li class="navbar__button"><a href="#" class="navbar__link">HOME</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CATEGORIES</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">ABOUT</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CONTACT</a></li>
+      <?php foreach ($navbar_buttons as $navbar_button): ?>
+        <li class="navbar__button"><a href="<?= $navbar_button['link'] ?>" class="navbar__link"><?= $navbar_button['text'] ?></a></li>
+      <?php endforeach; ?>
     </ul>
   </nav>
   <section class="page-header">
@@ -163,10 +169,9 @@ $most_recent_posts = [
       <img class="navbar__logo" src="static/images/light-logo.svg" alt="Logo">
     </a>
     <ul class="navbar__button-container">
-      <li class="navbar__button"><a href="#" class="navbar__link">HOME</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CATEGORIES</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">ABOUT</a></li>
-      <li class="navbar__button"><a href="#" class="navbar__link">CONTACT</a></li>
+      <?php foreach ($navbar_buttons as $navbar_button): ?>
+        <li class="navbar__button"><a href="<?= $navbar_button['link'] ?>" class="navbar__link"><?= $navbar_button['text'] ?></a></li>
+      <?php endforeach; ?>
     </ul>
   </nav>
 </footer>
