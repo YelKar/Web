@@ -1,3 +1,7 @@
+<?php
+global $post
+?>
+
 <a class="most-recent-post" href="<?= $post["link"] ?>">
   <img class="most-recent-post__image"
        src=".//static/images/page-images/<?= $post["image"] ?>" alt="<?= $post["title"] ?>">
