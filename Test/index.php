@@ -8,8 +8,6 @@
   <title>Document</title>
 </head>
 <body>
-<button onclick="alert('Hello')">
-  qwerty
-</button>
+
 </body>
 </html>
