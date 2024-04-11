@@ -9,7 +9,7 @@
 
 .top-panel {
     height: auto;
-    background-image: url("static/images/page-images/index.jpeg");
+    background-image: url("../images/page-previews/index.jpeg");
     background-color: #0008;
     background-size: cover;
     background-position: center;
@@ -240,6 +240,7 @@
 }
 
 .most-recent-post {
+    position: relative;
     width: 296px;
     height: 291px;
 
@@ -265,6 +266,26 @@
     border-bottom: 2px solid #efefef;
 
     background-color: #fcfcfc;
+}
+
+.most-recent-post__type {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    background-color: #dd783f;
+    color: #fff;
+    width: 87px;
+    height: 26px;
+    border-radius: 2px;
+
+    font-family: Oxygen, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 26px;
+    text-align: center;
+
+    text-transform: uppercase;
 }
 
 .most-recent-post__title {

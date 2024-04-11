@@ -96,7 +96,7 @@ body {
 
 .bottom-panel {
     height: var(--bottom-panel-height);
-    background: linear-gradient(#232f389a, #232f389a), url("static/images/footer-image.jpeg") no-repeat;
+    background: linear-gradient(#232f389a, #232f389a), url("../images/footer-image.jpeg") no-repeat;
     background-position-y: center;
     background-size: 100%;
 }
