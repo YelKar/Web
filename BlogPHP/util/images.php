@@ -3,7 +3,6 @@
 require_once __DIR__ . "/exceptions.php";
 
 function saveFile(string $file, string $data): bool {
-    echo "<br>$file<br>";
     $myFile = fopen($file, 'w');
     if ($myFile) {
         $result = fwrite($myFile, $data);

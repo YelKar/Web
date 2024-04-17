@@ -1,7 +1,7 @@
 <?php
 global $navbar_buttons;
-require_once "globals.php";
-require_once "database.php";
+include_once __DIR__ . "/util/globals.php";
+require_once __DIR__ . "/database.php";
 
 $post_id = (int)$_GET['id'];
 
@@ -32,7 +32,7 @@ if ($post === null) {
     </a>
     <ul class="navbar__button-container">
       <?php foreach ($navbar_buttons as $navbar_button): ?>
-      <li class="navbar__button"><a href="<?= $navbar_button['link'] ?>" class="navbar__link"><?= $navbar_button['text'] ?></a></li>
+        <li class="navbar__button"><a href="<?= $navbar_button['link'] ?>" class="navbar__link"><?= $navbar_button['text'] ?></a></li>
       <?php endforeach; ?>
     </ul>
   </nav>
@@ -42,10 +42,11 @@ if ($post === null) {
     <h1 class="page-header__title"><?= $post["title"] ?></h1>
     <h2 class="page-header__subtitle"><?= $post["subtitle"] ?></h2>
   </section>
-  <div
-      style="background-image: url('/static/images/page-images/<?= $post["image_url"] ?>');"
+  <img
+      src="/static/images/page-images/<?= $post["image_url"] ?>"
       class="page-image"
-  ></div>
+      alt="<?= $post["title"] ?> image"
+  >
   <div class="page-content">
     <?= $post["content"] ?>
   </div>

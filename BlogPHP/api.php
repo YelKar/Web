@@ -8,7 +8,6 @@ $method = $_SERVER["REQUEST_METHOD"];
 if ($method == "POST") {
     $json = file_get_contents("php://input");
     $dataArray = json_decode($json, true);
-    var_dump($dataArray);
 } else {
     echo "Method $method is not allowed";
     die();
@@ -24,7 +23,10 @@ function fromTitleToFileName(string $name): string
         ));
 }
 
-$imageFileName = fromTitleToFileName($dataArray["title"]);
+$fileSuffix = (new DateTimeImmutable()) -> format("__d-m-Y__H-i-s__u");
+$imageFileName = fromTitleToFileName($dataArray["title"]) . $fileSuffix;
+
+
 
 try {
     $pageImageName = saveImage(__DIR__ . "/static/images/page-images/", $imageFileName, $dataArray["image"]);
@@ -39,7 +41,7 @@ try {
     die();
 }
 try {
-    $authorImageName = saveImage(__DIR__ . "/static/images/author-avatars/", fromTitleToFileName($dataArray["author"]), $dataArray["author_avatar_image"]);
+    $authorImageName = saveImage(__DIR__ . "/static/images/author-avatars/", fromTitleToFileName($dataArray["author"]) . $fileSuffix, $dataArray["author_avatar_image"]);
 } catch (SaveImageException) {
     echo "Error during saving author avatar";
     die();
@@ -60,6 +62,5 @@ $rowArray = [
 
 $conn = connectDatabase();
 savePost($conn, $rowArray);
-
-var_dump($rowArray);
+echo "Post was saved to database";
 

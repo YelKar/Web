@@ -15,8 +15,7 @@
     width: 100%;
     height: 534px;
 
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
     background-size: cover;
 }
 
