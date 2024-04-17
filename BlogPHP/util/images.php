@@ -1,25 +1,34 @@
 <?php
 
-function saveFile(string $file, string $data): void {
+require_once __DIR__ . "/exceptions.php";
+
+function saveFile(string $file, string $data): bool {
     echo "<br>$file<br>";
-    $myFile = fopen($file, 'x');
+    $myFile = fopen($file, 'w');
     if ($myFile) {
         $result = fwrite($myFile, $data);
-        if ($result) {
-            echo 'Данные успешно сохранены в файл';
-        } else {
-            echo 'Произошла ошибка при сохранении данных в файл';
-        }
         fclose($myFile);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     } else {
-        var_dump($myFile);
-        echo 'Произошла ошибка при открытии файла';
+        return false;
     }
 }
 
-function saveImage(string $name, string $imageBase64): void {
+/**
+ * @throws SaveImageException
+ */
+function saveImage(string $path, string $name, string $imageBase64): string {
     $imageBase64Array = explode(';base64,', $imageBase64);
     $imgExtension = str_replace('data:image/', '', $imageBase64Array[0]);
     $imageDecoded = base64_decode($imageBase64Array[1]);
-    saveFile($res_name = "{$name}.{$imgExtension}", $imageDecoded);
+    $fileName = "{$name}.{$imgExtension}";
+    if (saveFile($path . $fileName, $imageDecoded)) {
+        return $fileName;
+    } else {
+        throw new SaveImageException;
+    }
 }

@@ -4,7 +4,7 @@ global $post
 
 <a
     class="featured-post"
-    style="background-image: url('<?= $post["preview_url"] ?>');"
+    style="background-image: url('/static/images/page-previews/<?= $post["preview_url"] ?>');"
     href="/post?id=<?= $post['id'] ?>"
     title="<?= $post["title"] ?>">
   <h4 class="featured-post__title"><?= $post["title"] ?></h4>
@@ -16,7 +16,7 @@ global $post
   <?php endif; ?>
   <div class="featured-post__info">
     <div class="featured-post__author">
-      <img class="featured-post__author-image" src="<?= $post["author_avatar_url"] ?>"
+      <img class="featured-post__author-image" src="/static/images/author-avatars/<?= $post["author_avatar_url"] ?>"
            alt="<?= $post["author"] ?>'s avatar">
       <span class="featured-post__author-name">
         <?= $post["author"] ?>

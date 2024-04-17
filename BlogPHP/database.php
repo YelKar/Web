@@ -15,6 +15,38 @@ function connectDatabase(): PDO
     );
 }
 
+function getPost(PDO $connection, int $id): ?array
+{
+    $query = <<<SQL
+        SELECT 
+            *
+        FROM
+            post
+        WHERE id=$id;
+    SQL;
+
+    $statement = $connection->query($query);
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        return $row;
+    }
+    return null;
+}
+
+function getAllPosts(PDO $connection): ?array {
+    $query = <<<SQL
+        SELECT 
+            * 
+        FROM
+            post;
+    SQL;
+
+    $statement = $connection->query($query);
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        return $row;
+    }
+    return null;
+}
+
 function getPostContent(PDO $connection, int $id): ?array {
     $query = <<<SQL
         SELECT 

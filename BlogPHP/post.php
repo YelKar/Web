@@ -43,7 +43,7 @@ if ($post === null) {
     <h2 class="page-header__subtitle"><?= $post["subtitle"] ?></h2>
   </section>
   <div
-      style="background-image: url('<?= $post["image_url"] ?>');"
+      style="background-image: url('/static/images/page-images/<?= $post["image_url"] ?>');"
       class="page-image"
   ></div>
   <div class="page-content">
