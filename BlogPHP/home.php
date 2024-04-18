@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . "/globals.php";
+include __DIR__ . "/util/globals.php";
 require_once __DIR__ . "/database.php";
 global $navbar_buttons;
 
