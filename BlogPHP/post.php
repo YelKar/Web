@@ -3,7 +3,7 @@ global $navbar_buttons;
 include_once __DIR__ . "/util/globals.php";
 require_once __DIR__ . "/database.php";
 
-$post_id = (int)$_GET['id'];
+$post_id = (int) $_GET['id'];
 
 $connection = connectDatabase();
 $post = getPostContent($connection, $post_id);

@@ -50,14 +50,18 @@ function getAllPosts(PDO $connection): ?array {
 function getPostContent(PDO $connection, int $id): ?array {
     $query = <<<SQL
         SELECT 
-            title, subtitle, 
-            content, image_url 
+            title, 
+            subtitle, 
+            content,
+            image_url 
         FROM
             post
-        WHERE id=$id;
+        WHERE 
+            id = :id;
     SQL;
 
-    $statement = $connection->query($query);
+    $statement = $connection->prepare($query);
+    $statement -> execute([":id" => $id]);
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         return $row;
     }
@@ -68,15 +72,19 @@ function getPostsPreviews(PDO $connection, bool $featured): ?array {
     $query = <<<SQL
         SELECT 
             id, 
-            title, subtitle, 
+            title, 
+            subtitle, 
             preview_url,
-            author, author_avatar_url, 
+            author, 
+            author_avatar_url, 
             publish_date, 
             type 
         FROM 
             post 
         WHERE 
-            featured = :featured;
+            featured = :featured
+        ORDER BY 
+            publish_date DESC;
     SQL;
 
     $statement = $connection->prepare($query);

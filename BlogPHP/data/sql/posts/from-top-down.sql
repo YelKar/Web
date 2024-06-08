@@ -1,8 +1,10 @@
 INSERT INTO
     post (
-        title, subtitle,
+        title,
+        subtitle,
         content,
-        author, author_avatar_url,
+        author,
+        author_avatar_url,
         publish_date,
         image_url,
         preview_url,

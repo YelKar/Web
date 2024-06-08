@@ -1,15 +1,20 @@
 <?php
 require_once __DIR__ . "/util/images.php";
+require_once __DIR__ . "/util/validation.php";
 require_once __DIR__ . "/database.php";
 
 
 $method = $_SERVER["REQUEST_METHOD"];
 
-if ($method == "POST") {
+if ($method === "POST") {
     $json = file_get_contents("php://input");
     $dataArray = json_decode($json, true);
 } else {
     echo "Method $method is not allowed";
+    die();
+}
+
+if (!validatePostJson($dataArray)) {
     die();
 }
 
@@ -25,7 +30,6 @@ function fromTitleToFileName(string $name): string
 
 $fileSuffix = (new DateTimeImmutable()) -> format("__d-m-Y__H-i-s__u");
 $imageFileName = fromTitleToFileName($dataArray["title"]) . $fileSuffix;
-
 
 
 try {
@@ -55,7 +59,7 @@ $rowArray = [
     "author_avatar_url" => $authorImageName,
     "publish_date" => $dataArray["publish_date"],
     "image_url" => $pageImageName,
-    "featured" => $dataArray["featured"] ?? 0,
+    "featured" => (int) $dataArray["featured"] ?? 0,
     "type" => $dataArray["type"],
     "preview_url" => $pagePreviewName,
 ];

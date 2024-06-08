@@ -24,7 +24,7 @@ $most_recent_posts = getPostsPreviews($conn, 0);
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Let's do it together.</title>
+  <title>Escape </title>
   <link rel="stylesheet" href="/static/css/fonts.css">
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="stylesheet" href="/static/css/home.css">

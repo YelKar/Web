@@ -75,14 +75,16 @@ body {
 }
 
 /* Top and bottom panel */
+a:has(.navbar__logo) {
+    vertical-align: middle;
+    line-height: 26px;
+}
 
 .navbar__logo, a:has(.navbar__logo) {
     width: 92px;
     height: 26px;
     display: inline-block;
-    vertical-align: middle;
     margin: 0;
-    padding: 0;
 }
 
 .navbar {
@@ -109,15 +111,18 @@ body {
     height: 100%;
 
     margin: 0 auto;
+
+    line-height: var(--top-panel-height);
 }
 
 .navbar__button-container {
     height: 100%;
     display: inline-block;
-    width: calc(100% - 96px);
+    /*width: calc(100% - 96px);*/
     padding: 0;
     margin: 0;
     text-align: right;
+    float: right;
 }
 
 .navbar__button {
@@ -168,10 +173,6 @@ body {
 
 
 /* scrollbar */
-
-html {
-    scrollbar-gutter: both-edges;
-}
 
 ::-webkit-scrollbar {
     background-color: #0000;

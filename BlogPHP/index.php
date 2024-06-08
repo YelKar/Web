@@ -63,32 +63,5 @@ $most_recent_posts = [
     ],
 ];
 
-
-foreach ($most_recent_posts as $post) {
-    $filename = "./data/sql/posts/" . substr(
-        $post['preview'],
-        0,strlen($post['preview'])-4,
-    ) . "sql";
-//    $f = fopen($filename, "x");
-    file_put_contents($filename, <<<SQL
-        INSERT INTO post 
-        (
-            title, subtitle, 
-            content, 
-            author, author_avatar_url, 
-            publish_date, 
-            image_url
-        ) 
-        VALUES 
-        (
-            '{$post["title"]}',
-            '{$post["subtitle"]}',
-             '',
-            '{$post["author"]["name"]}',
-            '/static/images/author-avatars/{$post["author"]["avatar"]}',
-            '2015-09-25',
-            '/static/images/page-images/{$post["preview"]}'
-        );
-    SQL);
-//    fclose()
-}
+header('Content-type: text/javascript');
+echo json_encode($most_recent_posts, JSON_PRETTY_PRINT);
